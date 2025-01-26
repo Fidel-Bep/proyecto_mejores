@@ -25,12 +25,14 @@ require_once 'includes/cabecera.php'; ?>
                  <div class="friend" style="border: 1px solid black; padding: 10px; margin: 10px;">
                  <h3><?= $amigo['nick_amigo']; ?></h3>
                  <p><?= $amigo['solicitud_amistad']; ?></p>
+                 <p><a href="procesamiento_datos/abandonar_amistad.php?amistad=<?=$amigo['nick_amigo']?>">Abandonar Amistad</a></p>
              </div>
             <?php else:; ?>
 
                 <div class="friend" style="border: 1px solid black; padding: 10px; margin: 10px;">
                 <h3><?= $amigo['nick_usuario']; ?></h3>
                 <p><?= $amigo['solicitud_amistad']; ?></p>
+                <p><a href="procesamiento_datos/abandonar_amistad.php?amistad=<?=$amigo['nick_usuario']?>">Abandonar Amistad</a></p>
            <?php endif; ?>
         <?php endwhile; ?>
         <?php endif; ?>

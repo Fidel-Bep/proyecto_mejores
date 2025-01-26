@@ -19,3 +19,15 @@ function comprobarEmailExiste($email){
         return true;    
     };
 }
+
+function comprobarMetaExiste($meta){
+    global $db;
+    $consulta_select="SELECT * FROM metas WHERE nombre_meta='$meta'";
+    $resultado = mysqli_query($db, $consulta_select);
+    
+    if(mysqli_num_rows($resultado)!=0){
+        return true;    
+    }else{
+        return false;
+    };
+};

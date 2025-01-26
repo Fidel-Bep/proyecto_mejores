@@ -26,10 +26,10 @@ require_once 'functions/funciones-query-select.php'; ?>
             <ul>
                 <li><a href="logged.php">USUARIO</a>
                     <ul>
-                        <li><a href="update_datos_v.php">Cambiar datos:</a></li>
-                        <li><a href="ver_amigos_v.php">Ver amigos:</a></li>
-                        <li><a href="ver_familiares_v.php">Ver familiares:</a></li>
-                        <li><a href="ver_metas_v.php">Agregar metas:</a></li>
+                        <li><a href="update_datos_v.php">Cambiar datos</a></li>
+                        <li><a href="ver_amigos_v.php">Ver amigos</a></li>
+                        <li><a href="ver_familiares_v.php">Ver familiares</a></li>
+                        <li><a href="ver_metas_v.php">Ver mis metas</a></li>
                     </ul>
                 </li>
                 

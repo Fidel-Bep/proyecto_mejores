@@ -48,3 +48,21 @@ CREATE TABLE familiares (
     CONSTRAINT fk_familiares_usuario FOREIGN KEY (nick_usuario) REFERENCES usuarios(nick),
     CONSTRAINT fk_familiares_familiar FOREIGN KEY (nick_familiar) REFERENCES usuarios(nick)
     )ENGINE=InnoDB;
+
+CREATE TABLE metas  (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    nombre_meta varchar(50) NOT NULL,
+    descripcion varchar(400) NOT NULL,
+    CONSTRAINT pk_metas PRIMARY KEY (id)
+)ENGINE=InnoDB;
+
+CREATE TABLE metas_usuario  (
+    nick_usuario varchar(50) NOT NULL,
+    id_meta int(11) NOT NULL,
+    puntuacion_meta int(10) NULL,
+    fecha_modificacion timestamp NULL ON UPDATE CURRENT_TIMESTAMP,
+    fecha_creacion timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_metas_usuario PRIMARY KEY (nick_usuario,id_meta),
+    CONSTRAINT fk_metas_usuario_usuario FOREIGN KEY (nick_usuario) REFERENCES usuarios(nick),
+    CONSTRAINT fk_metas_usuario_meta FOREIGN KEY (id_meta) REFERENCES metas(id)
+)ENGINE=InnoDB;

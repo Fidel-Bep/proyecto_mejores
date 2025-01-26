@@ -62,3 +62,4 @@ function resolverSolicitudFamilia($nick_familiar,$resolucion){
     return $resultado;
     
 };
+

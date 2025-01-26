@@ -115,3 +115,20 @@ function verSolicitudesFamiliaPendientes($nick){
     
     return $resultado;
 }
+
+function verMetas(){
+    global $db;
+    $consulta_select="SELECT * FROM metas";
+    $resultado = mysqli_query($db, $consulta_select);
+    
+    return $resultado;
+}
+
+function verMisMetas($nick){
+    global $db;
+    $consulta_select="SELECT m.nombre_meta, m.descripcion, m.id, mu.fecha_creacion, mu.puntuacion_meta FROM metas m
+    INNER JOIN metas_usuario mu ON m.id=mu.id_meta
+    WHERE mu.nick_usuario='$nick'";
+    $resultado = mysqli_query($db, $consulta_select);
+    return $resultado;
+}

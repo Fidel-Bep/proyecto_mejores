@@ -25,12 +25,14 @@ require_once 'includes/cabecera.php'; ?>
                  <div class="friend" style="border: 1px solid black; padding: 10px; margin: 10px;">
                  <h3><?= $familiar['nick_familiar']; ?></h3>
                  <p><?= $familiar['solicitud_familia']; ?></p>
+                 <p><a href="procesamiento_datos/abandonar_familiar.php?familiar=<?=$familiar['nick_familiar']?>">Abandonar Familiar</p>
              </div>
             <?php else:; ?>
 
                 <div class="friend" style="border: 1px solid black; padding: 10px; margin: 10px;">
                 <h3><?= $familiar['nick_usuario']; ?></h3>
                 <p><?= $familiar['solicitud_familia']; ?></p>
+                <p><a href="procesamiento_datos/abandonar_familiar.php?familiar=<?=$familiar['nick_usuario']?>">Abandonar Familiar</p>
            <?php endif; ?>
         <?php endwhile; ?>
         <?php endif; ?>

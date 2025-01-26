@@ -64,6 +64,23 @@ function insertarFamiliar($nick, $familiar){
     }
 };
 
+function insertarMeta($meta){
+    global $db;
+    $consulta_insert="INSERT INTO metas (meta) VALUES ('$meta')";
+    $resultado = mysqli_query($db, $consulta_insert);
+    return $resultado;
+}
+
+function insertarMetaUsuario($nick, $meta){
+    global $db;
+    $consulta_insert="INSERT INTO metas_usuario (nick_usuario, id_meta) 
+    SELECT '$nick',id
+    FROM metas
+    WHERE nombre_meta='$meta'";
+    $resultado = mysqli_query($db, $consulta_insert);
+    return $resultado;
+}
+
 
 
 
